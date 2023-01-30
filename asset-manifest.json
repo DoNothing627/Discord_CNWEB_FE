@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/DoNothing627/Discord_CNWEB_FE/static/css/main.6e7d0d9d.css",
-    "main.js": "/DoNothing627/Discord_CNWEB_FE/static/js/main.0c2c288a.js",
-    "static/js/787.cda612ba.chunk.js": "/DoNothing627/Discord_CNWEB_FE/static/js/787.cda612ba.chunk.js",
-    "static/media/background.jpg": "/DoNothing627/Discord_CNWEB_FE/static/media/background.2aac68e7b4e7f4a5d0af.jpg",
-    "index.html": "/DoNothing627/Discord_CNWEB_FE/index.html",
-    "main.6e7d0d9d.css.map": "/DoNothing627/Discord_CNWEB_FE/static/css/main.6e7d0d9d.css.map",
-    "main.0c2c288a.js.map": "/DoNothing627/Discord_CNWEB_FE/static/js/main.0c2c288a.js.map",
-    "787.cda612ba.chunk.js.map": "/DoNothing627/Discord_CNWEB_FE/static/js/787.cda612ba.chunk.js.map"
+    "main.css": "/Discord_CNWEB_FE/static/css/main.75abff4e.css",
+    "main.js": "/Discord_CNWEB_FE/static/js/main.e41d25be.js",
+    "static/js/787.cda612ba.chunk.js": "/Discord_CNWEB_FE/static/js/787.cda612ba.chunk.js",
+    "static/media/background.jpg": "/Discord_CNWEB_FE/static/media/background.2aac68e7b4e7f4a5d0af.jpg",
+    "index.html": "/Discord_CNWEB_FE/index.html",
+    "main.75abff4e.css.map": "/Discord_CNWEB_FE/static/css/main.75abff4e.css.map",
+    "main.e41d25be.js.map": "/Discord_CNWEB_FE/static/js/main.e41d25be.js.map",
+    "787.cda612ba.chunk.js.map": "/Discord_CNWEB_FE/static/js/787.cda612ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.6e7d0d9d.css",
-    "static/js/main.0c2c288a.js"
+    "static/css/main.75abff4e.css",
+    "static/js/main.e41d25be.js"
   ]
 }
