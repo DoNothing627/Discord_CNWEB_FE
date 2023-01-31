@@ -215,14 +215,6 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                       fetchAgain={fetchAgain}
                       setFetchAgain={setFetchAgain}
                     />
-                    <IconButton
-                      d={{ base: "flex", md: "none" }}
-                      bg="#2C2F33"
-                      icon={<PhoneIcon h={7} w={7} />}
-                      onClick={() =>
-                        onHandleVideocall(selectedChat.chatName.toUpperCase())
-                      }
-                    />
                   </Box>
                 </>
               ))}
