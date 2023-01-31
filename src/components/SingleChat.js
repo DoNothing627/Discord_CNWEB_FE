@@ -6,13 +6,7 @@ import { IconButton, Spinner, useToast } from "@chakra-ui/react";
 import { getSender, getSenderFull } from "../config/ChatLogics";
 import { useEffect, useState, useRef } from "react";
 import axios from "axios";
-import {
-  ArrowBackIcon,
-  PhoneIcon,
-  ViewIcon,
-  AttachmentIcon,
-  SettingsIcon,
-} from "@chakra-ui/icons";
+import { ArrowBackIcon, PhoneIcon } from "@chakra-ui/icons";
 import ProfileModal from "./miscellaneous/ProfileModal";
 import ScrollableChat from "./ScrollableChat";
 import Lottie from "react-lottie";
@@ -20,7 +14,8 @@ import animationData from "../animations/typing.json";
 import io from "socket.io-client";
 import UpdateGroupChatModal from "./miscellaneous/UpdateGroupChatModal";
 import { ChatState } from "../Context/ChatProvider";
-const ENDPOINT = "https://gentle-earth-01120.herokuapp.com"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
+import image from "../filler.jpg";
+const ENDPOINT = "http://localhost:5000"; // "https://talk-a-tive.herokuapp.com"; -> After deployment
 var socket, selectedChatCompare;
 
 //Create single chat peer to peer
@@ -33,7 +28,7 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
   const [typing, setTyping] = useState(false);
   const [istyping, setIsTyping] = useState(false);
   const toast = useToast();
-
+  const bottomRef = useRef(null);
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -148,6 +143,10 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
     });
   });
 
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [messages]);
+
   // useEffect(() => {
   //   if (messageEl) {
   //     messageEl.current.addEventListener('DOMNodeInserted', event => {
@@ -246,19 +245,20 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
             ) : (
               <div className="messages">
                 <ScrollableChat messages={messages} />
+                <div ref={bottomRef} />
+                {istyping ? (
+                  <div>
+                    <Lottie
+                      options={defaultOptions}
+                      // height={50}
+                      width={70}
+                      style={{ marginBottom: 15, marginLeft: 0 }}
+                    />
+                  </div>
+                ) : (
+                  <></>
+                )}
               </div>
-            )}
-            {istyping ? (
-              <div>
-                <Lottie
-                  options={defaultOptions}
-                  // height={50}
-                  width={70}
-                  style={{ marginBottom: 15, marginLeft: 0 }}
-                />
-              </div>
-            ) : (
-              <></>
             )}
           </Box>
           <FormControl
@@ -279,9 +279,27 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
       ) : (
         // to get socket.io on same page
         <Box d="flex" alignItems="center" justifyContent="center" h="100%">
-          <Text fontSize="3xl" pb={3} fontFamily="Work sans" color="white">
-            Click on a user to start chatting
+          <Text
+            fontSize="70px"
+            pb={3}
+            fontFamily="Work sans"
+            color="white"
+            sx={{
+              position: "absolute",
+              marginTop: "300px",
+              marginLeft: "20%",
+              // marginBottom:'100px',
+              textAlign: "center",
+              // left: 0,
+              // right: 0,
+            }}>
+            Welcome back
           </Text>
+          <img
+            src={image}
+            alt="some example image"
+            style={{ height: "100%", width: "100%", borderRadius: "5px" }}
+          />
         </Box>
       )}
     </>
